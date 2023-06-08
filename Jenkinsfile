@@ -27,5 +27,13 @@ pipeline {
                 }
             }
         }
+        stage('deploy') {
+            steps {
+                script {
+                    echo "Deploying the application to EC2..."
+                    gv.deployImage()
+                }
+            }
+        }
     }   
 }
