@@ -14,4 +14,12 @@ def pushImage() {
         sh 'docker push sivabics/demo-app:nodejs-app'
     }
 } 
+def deployImage() {
+    echo "Deploying the application to EC2..."
+    def dockerCmd = 'docker run -d -p 80:80 --name react-nodejs-app oluwaseuna/demo-app:react-nodejs-app' 
+    sshagent(['ec2-pem-key']) {
+        sh "ssh -o StrictHostKeyChecking=no ec2-user@18.130.225.104 ${dockerCmd}"
+    }
+} 
+return this
 
