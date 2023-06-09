@@ -11,22 +11,22 @@ pipeline {
                 }
             }
         }
-        stage('build') {
-            steps {
-                script {
-                    echo "Build Docker Image with Dockerfile..."
-                    gv.buildImage()
-                }
-            }
-        }
-        stage('push') {
-            steps {
-                script {
-                    echo "Pushing Docker Image to Docker Hub Repo..."
-                    gv.pushImage()
-                }
-            }
-        }
+//         stage('build') {
+//             steps {
+//                 script {
+//                     echo "Build Docker Image with Dockerfile..."
+//                     gv.buildImage()
+//                 }
+//             }
+//         }
+//         stage('push') {
+//             steps {
+//                 script {
+//                     echo "Pushing Docker Image to Docker Hub Repo..."
+//                     gv.pushImage()
+//                 }
+//             }
+//         }
         stage('deploy') {
             steps {
                 script {
