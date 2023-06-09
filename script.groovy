@@ -3,7 +3,7 @@
 def buildImage() {
     echo "Build Docker Image with Dockerfile..."
     sh 'ls'
-    sh 'docker --version'
+    sh 'sudo docker --version'
     sh 'docker build -t sivabics/demo-app:nodejs-app .'
 }
 
